@@ -31,10 +31,10 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
-  public_key = file("${path.module}/key.pub")
-}
+#resource "aws_key_pair" "deployer" {
+#  key_name   = "deployer-key"
+ # public_key = file("${path.module}/key.pub")
+#}
 
 resource "aws_instance" "example" {
   ami                    = data.aws_ami.ubuntu.id
